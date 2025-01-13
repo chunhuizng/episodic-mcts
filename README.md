@@ -1,5 +1,3 @@
-Here's your revised version of the README:
-
 # Scaling Episodic Grounding by Post-Training on MCTS Behavior Data
 
 Official implementation for "Scaling Episodic Grounding by Post-Training on MCTS Behavior Data". Post-training agentic LLMs (instruction tuning, knowledge distillation, and DPO on different LLMs across 3B, 8B, and 70B) on MCTS-sampled data from physical simulator to conduct planning.
