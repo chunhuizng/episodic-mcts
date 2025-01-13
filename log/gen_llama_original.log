@@ -1,0 +1,170 @@
+eval_gen_llama.sh: 7: [: obj_move_path: unexpected operator
+Detected kernel version 5.4.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+Running tokenizer on dataset:   0%|          | 0/200 [00:00<?, ? examples/s]Running tokenizer on dataset: 100%|██████████| 200/200 [00:00<00:00, 2402.17 examples/s]
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:04<00:08,  4.16s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:06<00:03,  3.35s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:08<00:00,  2.64s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:08<00:00,  2.91s/it]
+LlamaForCausalLM(
+  (model): LlamaModel(
+    (embed_tokens): Embedding(32000, 5120)
+    (layers): ModuleList(
+      (0-39): 40 x LlamaDecoderLayer(
+        (self_attn): LlamaSdpaAttention(
+          (q_proj): Linear8bitLt(in_features=5120, out_features=5120, bias=False)
+          (k_proj): Linear8bitLt(in_features=5120, out_features=5120, bias=False)
+          (v_proj): Linear8bitLt(in_features=5120, out_features=5120, bias=False)
+          (o_proj): Linear8bitLt(in_features=5120, out_features=5120, bias=False)
+          (rotary_emb): LlamaRotaryEmbedding()
+        )
+        (mlp): LlamaMLP(
+          (gate_proj): Linear8bitLt(in_features=5120, out_features=13824, bias=False)
+          (up_proj): Linear8bitLt(in_features=5120, out_features=13824, bias=False)
+          (down_proj): Linear8bitLt(in_features=13824, out_features=5120, bias=False)
+          (act_fn): SiLU()
+        )
+        (input_layernorm): LlamaRMSNorm()
+        (post_attention_layernorm): LlamaRMSNorm()
+      )
+    )
+    (norm): LlamaRMSNorm()
+    (rotary_emb): LlamaRotaryEmbedding()
+  )
+  (lm_head): Linear(in_features=5120, out_features=32000, bias=False)
+)
+  0%|          | 0/100 [00:00<?, ?it/s]  1%|          | 1/100 [00:55<1:31:29, 55.45s/it]  2%|▏         | 2/100 [01:50<1:29:57, 55.07s/it]  3%|▎         | 3/100 [02:44<1:28:16, 54.61s/it]  4%|▍         | 4/100 [03:38<1:26:51, 54.28s/it]  5%|▌         | 5/100 [04:32<1:26:15, 54.48s/it]  6%|▌         | 6/100 [05:25<1:24:33, 53.97s/it]  7%|▋         | 7/100 [06:19<1:23:27, 53.84s/it]  8%|▊         | 8/100 [07:13<1:22:38, 53.90s/it]  9%|▉         | 9/100 [08:07<1:21:34, 53.79s/it] 10%|█         | 10/100 [09:01<1:21:02, 54.02s/it] 11%|█         | 11/100 [09:55<1:19:59, 53.93s/it] 12%|█▏        | 12/100 [10:48<1:18:42, 53.66s/it] 13%|█▎        | 13/100 [11:41<1:17:45, 53.62s/it] 14%|█▍        | 14/100 [12:35<1:16:45, 53.55s/it] 15%|█▌        | 15/100 [13:28<1:15:53, 53.58s/it] 16%|█▌        | 16/100 [14:22<1:15:10, 53.70s/it] 17%|█▋        | 17/100 [15:16<1:14:16, 53.69s/it] 18%|█▊        | 18/100 [16:09<1:13:01, 53.43s/it] 19%|█▉        | 19/100 [17:03<1:12:22, 53.61s/it] 20%|██        | 20/100 [17:56<1:11:16, 53.46s/it] 21%|██        | 21/100 [18:49<1:10:07, 53.26s/it] 22%|██▏       | 22/100 [19:42<1:09:21, 53.35s/it] 23%|██▎       | 23/100 [20:36<1:08:31, 53.39s/it] 24%|██▍       | 24/100 [21:30<1:07:54, 53.61s/it] 25%|██▌       | 25/100 [22:24<1:07:12, 53.76s/it] 26%|██▌       | 26/100 [23:18<1:06:23, 53.84s/it] 27%|██▋       | 27/100 [24:11<1:05:06, 53.51s/it] 28%|██▊       | 28/100 [25:04<1:04:08, 53.45s/it] 29%|██▉       | 29/100 [25:58<1:03:19, 53.52s/it] 30%|███       | 30/100 [26:51<1:02:25, 53.51s/it] 31%|███       | 31/100 [27:46<1:01:45, 53.70s/it] 32%|███▏      | 32/100 [28:40<1:01:07, 53.93s/it] 33%|███▎      | 33/100 [29:33<59:49, 53.58s/it]   34%|███▍      | 34/100 [30:27<59:04, 53.71s/it] 35%|███▌      | 35/100 [31:21<58:21, 53.87s/it] 36%|███▌      | 36/100 [32:14<57:17, 53.71s/it] 37%|███▋      | 37/100 [33:07<56:09, 53.48s/it] 38%|███▊      | 38/100 [34:01<55:16, 53.48s/it] 39%|███▉      | 39/100 [34:55<54:33, 53.66s/it] 40%|████      | 40/100 [35:49<53:44, 53.73s/it] 41%|████      | 41/100 [36:43<52:54, 53.80s/it] 42%|████▏     | 42/100 [37:36<51:58, 53.77s/it] 43%|████▎     | 43/100 [38:31<51:12, 53.91s/it] 44%|████▍     | 44/100 [39:24<50:08, 53.72s/it] 45%|████▌     | 45/100 [40:17<49:01, 53.48s/it] 46%|████▌     | 46/100 [41:10<47:58, 53.31s/it] 47%|████▋     | 47/100 [42:03<47:01, 53.24s/it] 48%|████▊     | 48/100 [42:56<46:07, 53.22s/it] 49%|████▉     | 49/100 [43:50<45:30, 53.55s/it] 50%|█████     | 50/100 [44:43<44:31, 53.42s/it] 51%|█████     | 51/100 [45:37<43:37, 53.41s/it] 52%|█████▏    | 52/100 [46:30<42:46, 53.48s/it] 53%|█████▎    | 53/100 [47:24<41:54, 53.51s/it] 54%|█████▍    | 54/100 [48:17<40:57, 53.42s/it] 55%|█████▌    | 55/100 [49:11<40:04, 53.42s/it] 56%|█████▌    | 56/100 [50:04<39:11, 53.44s/it] 57%|█████▋    | 57/100 [50:58<38:25, 53.61s/it] 58%|█████▊    | 58/100 [51:52<37:28, 53.54s/it] 59%|█████▉    | 59/100 [52:45<36:29, 53.41s/it] 60%|██████    | 60/100 [53:39<35:44, 53.62s/it] 61%|██████    | 61/100 [54:32<34:45, 53.47s/it] 62%|██████▏   | 62/100 [55:26<34:01, 53.73s/it] 63%|██████▎   | 63/100 [56:19<33:01, 53.55s/it] 64%|██████▍   | 64/100 [57:13<32:14, 53.72s/it] 65%|██████▌   | 65/100 [58:06<31:12, 53.49s/it] 66%|██████▌   | 66/100 [59:00<30:24, 53.66s/it] 67%|██████▋   | 67/100 [59:54<29:28, 53.58s/it] 68%|██████▊   | 68/100 [1:00:48<28:40, 53.77s/it] 69%|██████▉   | 69/100 [1:01:42<27:45, 53.74s/it] 70%|███████   | 70/100 [1:02:36<26:53, 53.77s/it] 71%|███████   | 71/100 [1:03:29<25:56, 53.67s/it] 72%|███████▏  | 72/100 [1:04:24<25:10, 53.93s/it] 73%|███████▎  | 73/100 [1:05:17<24:12, 53.80s/it] 74%|███████▍  | 74/100 [1:06:10<23:09, 53.45s/it] 75%|███████▌  | 75/100 [1:07:03<22:16, 53.45s/it] 76%|███████▌  | 76/100 [1:07:56<21:21, 53.38s/it] 77%|███████▋  | 77/100 [1:08:49<20:22, 53.17s/it] 78%|███████▊  | 78/100 [1:09:42<19:30, 53.21s/it] 79%|███████▉  | 79/100 [1:10:36<18:37, 53.21s/it] 80%|████████  | 80/100 [1:11:30<17:49, 53.50s/it] 81%|████████  | 81/100 [1:12:23<16:54, 53.41s/it] 82%|████████▏ | 82/100 [1:13:17<16:02, 53.49s/it] 83%|████████▎ | 83/100 [1:14:10<15:09, 53.48s/it] 84%|████████▍ | 84/100 [1:15:03<14:14, 53.44s/it] 85%|████████▌ | 85/100 [1:15:56<13:16, 53.11s/it] 86%|████████▌ | 86/100 [1:16:50<12:26, 53.31s/it] 87%|████████▋ | 87/100 [1:17:44<11:36, 53.55s/it] 88%|████████▊ | 88/100 [1:18:37<10:40, 53.40s/it] 89%|████████▉ | 89/100 [1:19:30<09:46, 53.30s/it] 90%|█████████ | 90/100 [1:20:23<08:52, 53.22s/it] 91%|█████████ | 91/100 [1:21:15<07:57, 53.01s/it] 92%|█████████▏| 92/100 [1:22:09<07:06, 53.31s/it] 93%|█████████▎| 93/100 [1:23:02<06:12, 53.22s/it] 94%|█████████▍| 94/100 [1:23:57<05:21, 53.59s/it] 95%|█████████▌| 95/100 [1:24:51<04:29, 53.93s/it] 96%|█████████▌| 96/100 [1:25:45<03:35, 53.84s/it] 97%|█████████▋| 97/100 [1:26:38<02:40, 53.60s/it] 98%|█████████▊| 98/100 [1:27:32<01:47, 53.55s/it] 99%|█████████▉| 99/100 [1:28:25<00:53, 53.51s/it]100%|██████████| 100/100 [1:29:19<00:00, 53.60s/it]100%|██████████| 100/100 [1:29:19<00:00, 53.59s/it]
+Evaluation: rouge1=0.7076375846375851, rouge2=0.4754467893217893, rougeL=0.6746517926517929
+eval_gen_llama.sh: 7: [: plan_gen_confusing: unexpected operator
+Detected kernel version 5.4.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+Running tokenizer on dataset:   0%|          | 0/135 [00:00<?, ? examples/s]Running tokenizer on dataset: 100%|██████████| 135/135 [00:00<00:00, 2302.83 examples/s]
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:03<00:07,  3.73s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:17<00:09,  9.79s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:19<00:00,  6.11s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:19<00:00,  6.50s/it]
+LlamaForCausalLM(
+  (model): LlamaModel(
+    (embed_tokens): Embedding(32000, 5120)
+    (layers): ModuleList(
+      (0-39): 40 x LlamaDecoderLayer(
+        (self_attn): LlamaSdpaAttention(
+          (q_proj): Linear8bitLt(in_features=5120, out_features=5120, bias=False)
+          (k_proj): Linear8bitLt(in_features=5120, out_features=5120, bias=False)
+          (v_proj): Linear8bitLt(in_features=5120, out_features=5120, bias=False)
+          (o_proj): Linear8bitLt(in_features=5120, out_features=5120, bias=False)
+          (rotary_emb): LlamaRotaryEmbedding()
+        )
+        (mlp): LlamaMLP(
+          (gate_proj): Linear8bitLt(in_features=5120, out_features=13824, bias=False)
+          (up_proj): Linear8bitLt(in_features=5120, out_features=13824, bias=False)
+          (down_proj): Linear8bitLt(in_features=13824, out_features=5120, bias=False)
+          (act_fn): SiLU()
+        )
+        (input_layernorm): LlamaRMSNorm()
+        (post_attention_layernorm): LlamaRMSNorm()
+      )
+    )
+    (norm): LlamaRMSNorm()
+    (rotary_emb): LlamaRotaryEmbedding()
+  )
+  (lm_head): Linear(in_features=5120, out_features=32000, bias=False)
+)
+  0%|          | 0/68 [00:00<?, ?it/s]  1%|▏         | 1/68 [00:48<54:41, 48.98s/it]  3%|▎         | 2/68 [01:36<52:52, 48.07s/it]  4%|▍         | 3/68 [02:24<52:18, 48.29s/it]  6%|▌         | 4/68 [03:13<51:35, 48.36s/it]  7%|▋         | 5/68 [04:24<59:21, 56.53s/it]  9%|▉         | 6/68 [05:26<1:00:21, 58.42s/it] 10%|█         | 7/68 [06:33<1:02:07, 61.11s/it] 12%|█▏        | 8/68 [07:25<58:23, 58.39s/it]   13%|█▎        | 9/68 [08:13<54:14, 55.16s/it] 15%|█▍        | 10/68 [09:02<51:24, 53.19s/it] 16%|█▌        | 11/68 [09:50<49:07, 51.72s/it] 18%|█▊        | 12/68 [10:39<47:20, 50.72s/it] 19%|█▉        | 13/68 [11:27<45:52, 50.04s/it] 21%|██        | 14/68 [12:15<44:23, 49.32s/it] 22%|██▏       | 15/68 [13:04<43:30, 49.26s/it] 24%|██▎       | 16/68 [13:54<42:55, 49.53s/it] 25%|██▌       | 17/68 [14:43<41:49, 49.20s/it] 26%|██▋       | 18/68 [15:30<40:28, 48.57s/it] 28%|██▊       | 19/68 [16:18<39:38, 48.55s/it] 29%|██▉       | 20/68 [17:06<38:35, 48.24s/it] 31%|███       | 21/68 [18:09<41:22, 52.82s/it] 32%|███▏      | 22/68 [19:23<45:14, 59.01s/it] 34%|███▍      | 23/68 [20:10<41:39, 55.55s/it] 35%|███▌      | 24/68 [20:58<38:57, 53.13s/it] 37%|███▋      | 25/68 [21:45<36:51, 51.43s/it] 38%|███▊      | 26/68 [22:33<35:12, 50.30s/it] 40%|███▉      | 27/68 [23:22<34:09, 49.99s/it] 41%|████      | 28/68 [24:11<33:02, 49.57s/it] 43%|████▎     | 29/68 [24:59<31:57, 49.18s/it] 44%|████▍     | 30/68 [25:48<31:03, 49.03s/it] 46%|████▌     | 31/68 [26:36<30:01, 48.68s/it] 47%|████▋     | 32/68 [27:24<29:06, 48.52s/it] 49%|████▊     | 33/68 [28:12<28:13, 48.38s/it] 50%|█████     | 34/68 [29:00<27:24, 48.36s/it] 51%|█████▏    | 35/68 [29:49<26:39, 48.46s/it] 53%|█████▎    | 36/68 [30:37<25:51, 48.49s/it] 54%|█████▍    | 37/68 [31:27<25:14, 48.84s/it] 56%|█████▌    | 38/68 [32:16<24:30, 49.01s/it] 57%|█████▋    | 39/68 [33:05<23:40, 48.98s/it] 59%|█████▉    | 40/68 [33:53<22:41, 48.62s/it] 60%|██████    | 41/68 [34:40<21:40, 48.18s/it] 62%|██████▏   | 42/68 [35:28<20:48, 48.03s/it] 63%|██████▎   | 43/68 [36:17<20:10, 48.43s/it] 65%|██████▍   | 44/68 [37:06<19:26, 48.60s/it] 66%|██████▌   | 45/68 [37:55<18:35, 48.52s/it] 68%|██████▊   | 46/68 [38:43<17:43, 48.34s/it] 69%|██████▉   | 47/68 [39:30<16:50, 48.12s/it] 71%|███████   | 48/68 [40:18<15:59, 47.97s/it] 72%|███████▏  | 49/68 [41:05<15:09, 47.89s/it] 74%|███████▎  | 50/68 [41:54<14:23, 47.96s/it] 75%|███████▌  | 51/68 [42:42<13:37, 48.08s/it] 76%|███████▋  | 52/68 [43:30<12:50, 48.18s/it] 78%|███████▊  | 53/68 [44:18<12:00, 48.00s/it] 79%|███████▉  | 54/68 [45:06<11:11, 47.96s/it] 81%|████████  | 55/68 [45:54<10:24, 48.04s/it] 82%|████████▏ | 56/68 [46:43<09:38, 48.17s/it] 84%|████████▍ | 57/68 [47:30<08:47, 47.98s/it] 85%|████████▌ | 58/68 [48:19<08:02, 48.24s/it] 87%|████████▋ | 59/68 [49:07<07:13, 48.18s/it] 88%|████████▊ | 60/68 [49:56<06:26, 48.34s/it] 90%|████████▉ | 61/68 [50:44<05:37, 48.19s/it] 91%|█████████ | 62/68 [51:31<04:48, 48.04s/it] 93%|█████████▎| 63/68 [52:20<04:01, 48.33s/it] 94%|█████████▍| 64/68 [53:07<03:11, 47.95s/it] 96%|█████████▌| 65/68 [53:56<02:24, 48.21s/it] 97%|█████████▋| 66/68 [54:45<01:36, 48.45s/it] 99%|█████████▊| 67/68 [55:34<00:48, 48.54s/it]100%|██████████| 68/68 [56:18<00:00, 47.26s/it]100%|██████████| 68/68 [56:18<00:00, 49.69s/it]
+Evaluation: rouge1=0.44343941545746635, rouge2=0.2565685375040062, rougeL=0.39509188288076375
+eval_gen_llama.sh: 7: [: plan_gen: unexpected operator
+Detected kernel version 5.4.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+Running tokenizer on dataset:   0%|          | 0/175 [00:00<?, ? examples/s]Running tokenizer on dataset: 100%|██████████| 175/175 [00:00<00:00, 3000.19 examples/s]
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:04<00:08,  4.14s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:07<00:03,  3.64s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:11<00:00,  4.03s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:11<00:00,  3.98s/it]
+LlamaForCausalLM(
+  (model): LlamaModel(
+    (embed_tokens): Embedding(32000, 5120)
+    (layers): ModuleList(
+      (0-39): 40 x LlamaDecoderLayer(
+        (self_attn): LlamaSdpaAttention(
+          (q_proj): Linear8bitLt(in_features=5120, out_features=5120, bias=False)
+          (k_proj): Linear8bitLt(in_features=5120, out_features=5120, bias=False)
+          (v_proj): Linear8bitLt(in_features=5120, out_features=5120, bias=False)
+          (o_proj): Linear8bitLt(in_features=5120, out_features=5120, bias=False)
+          (rotary_emb): LlamaRotaryEmbedding()
+        )
+        (mlp): LlamaMLP(
+          (gate_proj): Linear8bitLt(in_features=5120, out_features=13824, bias=False)
+          (up_proj): Linear8bitLt(in_features=5120, out_features=13824, bias=False)
+          (down_proj): Linear8bitLt(in_features=13824, out_features=5120, bias=False)
+          (act_fn): SiLU()
+        )
+        (input_layernorm): LlamaRMSNorm()
+        (post_attention_layernorm): LlamaRMSNorm()
+      )
+    )
+    (norm): LlamaRMSNorm()
+    (rotary_emb): LlamaRotaryEmbedding()
+  )
+  (lm_head): Linear(in_features=5120, out_features=32000, bias=False)
+)
+  0%|          | 0/88 [00:00<?, ?it/s]  1%|          | 1/88 [00:50<1:12:32, 50.03s/it]  2%|▏         | 2/88 [01:38<1:10:20, 49.08s/it]  3%|▎         | 3/88 [02:28<1:10:09, 49.53s/it]  5%|▍         | 4/88 [03:19<1:10:05, 50.07s/it]  6%|▌         | 5/88 [04:07<1:08:28, 49.50s/it]  7%|▋         | 6/88 [04:57<1:07:30, 49.40s/it]  8%|▊         | 7/88 [05:45<1:06:24, 49.19s/it]  9%|▉         | 8/88 [06:33<1:05:05, 48.82s/it] 10%|█         | 9/88 [07:22<1:04:11, 48.75s/it] 11%|█▏        | 10/88 [08:10<1:03:14, 48.65s/it] 12%|█▎        | 11/88 [08:58<1:02:06, 48.39s/it] 14%|█▎        | 12/88 [09:48<1:01:42, 48.71s/it] 15%|█▍        | 13/88 [10:36<1:00:46, 48.62s/it] 16%|█▌        | 14/88 [11:25<59:59, 48.64s/it]   17%|█▋        | 15/88 [12:14<59:23, 48.82s/it] 18%|█▊        | 16/88 [13:03<58:40, 48.90s/it] 19%|█▉        | 17/88 [13:51<57:38, 48.71s/it] 20%|██        | 18/88 [14:41<56:59, 48.85s/it] 22%|██▏       | 19/88 [15:30<56:27, 49.10s/it] 23%|██▎       | 20/88 [16:19<55:34, 49.04s/it] 24%|██▍       | 21/88 [17:08<54:43, 49.01s/it] 25%|██▌       | 22/88 [17:57<53:46, 48.89s/it] 26%|██▌       | 23/88 [18:45<52:47, 48.73s/it] 27%|██▋       | 24/88 [19:33<51:50, 48.59s/it] 28%|██▊       | 25/88 [20:22<50:55, 48.49s/it] 30%|██▉       | 26/88 [21:09<49:46, 48.17s/it] 31%|███       | 27/88 [21:57<48:54, 48.11s/it] 32%|███▏      | 28/88 [22:45<48:03, 48.06s/it] 33%|███▎      | 29/88 [23:33<47:10, 47.98s/it] 34%|███▍      | 30/88 [24:20<46:20, 47.93s/it] 35%|███▌      | 31/88 [25:09<45:36, 48.02s/it] 36%|███▋      | 32/88 [25:56<44:38, 47.84s/it] 38%|███▊      | 33/88 [26:45<44:02, 48.04s/it] 39%|███▊      | 34/88 [27:33<43:19, 48.13s/it] 40%|███▉      | 35/88 [28:21<42:32, 48.17s/it] 41%|████      | 36/88 [29:09<41:42, 48.13s/it] 42%|████▏     | 37/88 [29:58<41:03, 48.30s/it] 43%|████▎     | 38/88 [30:47<40:19, 48.39s/it] 44%|████▍     | 39/88 [31:34<39:23, 48.24s/it] 45%|████▌     | 40/88 [32:23<38:41, 48.35s/it] 47%|████▋     | 41/88 [33:11<37:49, 48.28s/it] 48%|████▊     | 42/88 [34:00<37:07, 48.42s/it] 49%|████▉     | 43/88 [34:48<36:11, 48.26s/it] 50%|█████     | 44/88 [35:36<35:22, 48.25s/it] 51%|█████     | 45/88 [36:24<34:27, 48.08s/it] 52%|█████▏    | 46/88 [37:13<33:49, 48.32s/it] 53%|█████▎    | 47/88 [38:00<32:54, 48.17s/it] 55%|█████▍    | 48/88 [38:48<32:04, 48.10s/it] 56%|█████▌    | 49/88 [39:37<31:22, 48.27s/it] 57%|█████▋    | 50/88 [40:24<30:20, 47.91s/it] 58%|█████▊    | 51/88 [41:13<29:38, 48.06s/it] 59%|█████▉    | 52/88 [42:01<28:51, 48.10s/it] 60%|██████    | 53/88 [42:48<27:57, 47.92s/it] 61%|██████▏   | 54/88 [43:37<27:16, 48.12s/it] 62%|██████▎   | 55/88 [44:25<26:28, 48.14s/it] 64%|██████▎   | 56/88 [45:13<25:38, 48.09s/it] 65%|██████▍   | 57/88 [46:01<24:47, 47.99s/it] 66%|██████▌   | 58/88 [46:50<24:14, 48.48s/it] 67%|██████▋   | 59/88 [47:38<23:23, 48.38s/it] 68%|██████▊   | 60/88 [48:26<22:31, 48.25s/it] 69%|██████▉   | 61/88 [49:15<21:42, 48.26s/it] 70%|███████   | 62/88 [50:03<20:55, 48.29s/it] 72%|███████▏  | 63/88 [50:52<20:09, 48.36s/it] 73%|███████▎  | 64/88 [51:40<19:18, 48.26s/it] 74%|███████▍  | 65/88 [52:28<18:28, 48.18s/it] 75%|███████▌  | 66/88 [53:16<17:42, 48.30s/it] 76%|███████▌  | 67/88 [54:04<16:53, 48.28s/it] 77%|███████▋  | 68/88 [54:53<16:08, 48.45s/it] 78%|███████▊  | 69/88 [55:42<15:21, 48.50s/it] 80%|███████▉  | 70/88 [56:30<14:29, 48.29s/it] 81%|████████  | 71/88 [57:18<13:38, 48.15s/it] 82%|████████▏ | 72/88 [58:06<12:50, 48.14s/it] 83%|████████▎ | 73/88 [58:54<12:02, 48.15s/it] 84%|████████▍ | 74/88 [59:42<11:12, 48.06s/it] 85%|████████▌ | 75/88 [1:00:30<10:27, 48.28s/it] 86%|████████▋ | 76/88 [1:01:19<09:39, 48.28s/it] 88%|████████▊ | 77/88 [1:02:06<08:49, 48.11s/it] 89%|████████▊ | 78/88 [1:02:55<08:02, 48.29s/it] 90%|████████▉ | 79/88 [1:03:43<07:14, 48.27s/it] 91%|█████████ | 80/88 [1:04:31<06:25, 48.15s/it] 92%|█████████▏| 81/88 [1:05:19<05:36, 48.10s/it] 93%|█████████▎| 82/88 [1:06:07<04:48, 48.01s/it] 94%|█████████▍| 83/88 [1:06:56<04:01, 48.21s/it] 95%|█████████▌| 84/88 [1:07:45<03:13, 48.45s/it] 97%|█████████▋| 85/88 [1:08:32<02:24, 48.18s/it] 98%|█████████▊| 86/88 [1:09:20<01:36, 48.05s/it] 99%|█████████▉| 87/88 [1:10:08<00:48, 48.02s/it]100%|██████████| 88/88 [1:10:52<00:00, 46.89s/it]100%|██████████| 88/88 [1:10:52<00:00, 48.33s/it]
+Evaluation: rouge1=0.44555674003351786, rouge2=0.2511060419797776, rougeL=0.3997110165518961
+eval_gen_llama.sh: 7: [: plan_gen_unseen_confusing: unexpected operator
+Detected kernel version 5.4.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+Running tokenizer on dataset:   0%|          | 0/43 [00:00<?, ? examples/s]Running tokenizer on dataset: 100%|██████████| 43/43 [00:00<00:00, 1661.22 examples/s]
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:04<00:08,  4.26s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:07<00:03,  3.72s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:09<00:00,  2.86s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:09<00:00,  3.15s/it]
+LlamaForCausalLM(
+  (model): LlamaModel(
+    (embed_tokens): Embedding(32000, 5120)
+    (layers): ModuleList(
+      (0-39): 40 x LlamaDecoderLayer(
+        (self_attn): LlamaSdpaAttention(
+          (q_proj): Linear8bitLt(in_features=5120, out_features=5120, bias=False)
+          (k_proj): Linear8bitLt(in_features=5120, out_features=5120, bias=False)
+          (v_proj): Linear8bitLt(in_features=5120, out_features=5120, bias=False)
+          (o_proj): Linear8bitLt(in_features=5120, out_features=5120, bias=False)
+          (rotary_emb): LlamaRotaryEmbedding()
+        )
+        (mlp): LlamaMLP(
+          (gate_proj): Linear8bitLt(in_features=5120, out_features=13824, bias=False)
+          (up_proj): Linear8bitLt(in_features=5120, out_features=13824, bias=False)
+          (down_proj): Linear8bitLt(in_features=13824, out_features=5120, bias=False)
+          (act_fn): SiLU()
+        )
+        (input_layernorm): LlamaRMSNorm()
+        (post_attention_layernorm): LlamaRMSNorm()
+      )
+    )
+    (norm): LlamaRMSNorm()
+    (rotary_emb): LlamaRotaryEmbedding()
+  )
+  (lm_head): Linear(in_features=5120, out_features=32000, bias=False)
+)
+  0%|          | 0/22 [00:00<?, ?it/s]  5%|▍         | 1/22 [00:50<17:35, 50.27s/it]  9%|▉         | 2/22 [01:39<16:35, 49.75s/it] 14%|█▎        | 3/22 [02:29<15:45, 49.76s/it] 18%|█▊        | 4/22 [03:19<14:55, 49.75s/it] 23%|██▎       | 5/22 [04:08<14:05, 49.73s/it] 27%|██▋       | 6/22 [04:57<13:11, 49.48s/it] 32%|███▏      | 7/22 [05:47<12:23, 49.57s/it] 36%|███▋      | 8/22 [06:36<11:31, 49.42s/it] 41%|████      | 9/22 [07:26<10:43, 49.47s/it] 45%|████▌     | 10/22 [08:15<09:51, 49.28s/it] 50%|█████     | 11/22 [09:05<09:04, 49.46s/it] 55%|█████▍    | 12/22 [09:54<08:14, 49.43s/it] 59%|█████▉    | 13/22 [10:44<07:27, 49.67s/it] 64%|██████▎   | 14/22 [11:33<06:36, 49.58s/it] 68%|██████▊   | 15/22 [12:24<05:48, 49.72s/it] 73%|███████▎  | 16/22 [13:12<04:56, 49.37s/it] 77%|███████▋  | 17/22 [14:01<04:05, 49.13s/it] 82%|████████▏ | 18/22 [14:50<03:16, 49.17s/it] 86%|████████▋ | 19/22 [15:40<02:28, 49.51s/it] 91%|█████████ | 20/22 [16:31<01:39, 49.78s/it] 95%|█████████▌| 21/22 [17:21<00:49, 49.84s/it]100%|██████████| 22/22 [18:06<00:00, 48.56s/it]100%|██████████| 22/22 [18:06<00:00, 49.39s/it]
+Evaluation: rouge1=0.44182623560272594, rouge2=0.23815963489656863, rougeL=0.37554067227761945
+eval_gen_llama.sh: 7: [: plan_gen_unseen: unexpected operator
+Detected kernel version 5.4.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+Running tokenizer on dataset:   0%|          | 0/54 [00:00<?, ? examples/s]Running tokenizer on dataset: 100%|██████████| 54/54 [00:00<00:00, 1819.25 examples/s]
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:04<00:08,  4.25s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:07<00:03,  3.49s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:09<00:00,  2.76s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:09<00:00,  3.03s/it]
+LlamaForCausalLM(
+  (model): LlamaModel(
+    (embed_tokens): Embedding(32000, 5120)
+    (layers): ModuleList(
+      (0-39): 40 x LlamaDecoderLayer(
+        (self_attn): LlamaSdpaAttention(
+          (q_proj): Linear8bitLt(in_features=5120, out_features=5120, bias=False)
+          (k_proj): Linear8bitLt(in_features=5120, out_features=5120, bias=False)
+          (v_proj): Linear8bitLt(in_features=5120, out_features=5120, bias=False)
+          (o_proj): Linear8bitLt(in_features=5120, out_features=5120, bias=False)
+          (rotary_emb): LlamaRotaryEmbedding()
+        )
+        (mlp): LlamaMLP(
+          (gate_proj): Linear8bitLt(in_features=5120, out_features=13824, bias=False)
+          (up_proj): Linear8bitLt(in_features=5120, out_features=13824, bias=False)
+          (down_proj): Linear8bitLt(in_features=13824, out_features=5120, bias=False)
+          (act_fn): SiLU()
+        )
+        (input_layernorm): LlamaRMSNorm()
+        (post_attention_layernorm): LlamaRMSNorm()
+      )
+    )
+    (norm): LlamaRMSNorm()
+    (rotary_emb): LlamaRotaryEmbedding()
+  )
+  (lm_head): Linear(in_features=5120, out_features=32000, bias=False)
+)
+  0%|          | 0/27 [00:00<?, ?it/s]  4%|▎         | 1/27 [00:50<21:45, 50.22s/it]  7%|▋         | 2/27 [01:39<20:47, 49.90s/it] 11%|█         | 3/27 [02:29<19:50, 49.59s/it] 15%|█▍        | 4/27 [03:18<18:56, 49.43s/it] 19%|█▊        | 5/27 [04:08<18:09, 49.54s/it] 22%|██▏       | 6/27 [04:57<17:21, 49.60s/it] 26%|██▌       | 7/27 [05:46<16:28, 49.44s/it] 30%|██▉       | 8/27 [06:35<15:35, 49.26s/it] 33%|███▎      | 9/27 [07:24<14:46, 49.25s/it] 37%|███▋      | 10/27 [08:13<13:55, 49.15s/it] 41%|████      | 11/27 [09:03<13:09, 49.35s/it] 44%|████▍     | 12/27 [09:52<12:18, 49.21s/it] 48%|████▊     | 13/27 [10:41<11:27, 49.12s/it] 52%|█████▏    | 14/27 [11:31<10:40, 49.28s/it] 56%|█████▌    | 15/27 [12:20<09:53, 49.45s/it] 59%|█████▉    | 16/27 [13:10<09:03, 49.43s/it] 63%|██████▎   | 17/27 [13:59<08:14, 49.40s/it] 67%|██████▋   | 18/27 [14:49<07:24, 49.44s/it] 70%|███████   | 19/27 [15:38<06:34, 49.36s/it] 74%|███████▍  | 20/27 [16:28<05:47, 49.64s/it] 78%|███████▊  | 21/27 [17:18<04:58, 49.68s/it] 81%|████████▏ | 22/27 [18:08<04:08, 49.76s/it] 85%|████████▌ | 23/27 [18:58<03:18, 49.74s/it] 89%|████████▉ | 24/27 [19:46<02:27, 49.33s/it] 93%|█████████▎| 25/27 [20:35<01:38, 49.14s/it] 96%|█████████▋| 26/27 [21:24<00:49, 49.09s/it]100%|██████████| 27/27 [22:13<00:00, 49.21s/it]100%|██████████| 27/27 [22:13<00:00, 49.39s/it]
+Evaluation: rouge1=0.4326482514776335, rouge2=0.23852606005107202, rougeL=0.3881321302200841
